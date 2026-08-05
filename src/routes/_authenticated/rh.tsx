@@ -97,10 +97,14 @@ function RhPanel() {
       .from("submissions")
       .update({ status: status as Submission["status"] })
       .eq("id", id);
-    if (error) return toast.error("Não foi possível atualizar o status.");
+    if (error) {
+      toast.error("Não foi possível atualizar o status.");
+      return;
+    }
     toast.success("Status atualizado.");
     queryClient.invalidateQueries({ queryKey: ["submissions"] });
   }
+
 
   async function signOut() {
     await queryClient.cancelQueries();
