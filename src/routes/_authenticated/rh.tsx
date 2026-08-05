@@ -51,7 +51,7 @@ type Submission = {
   author_name: string | null;
   author_sector: string | null;
   author_email: string | null;
-  status: keyof typeof STATUS;
+  status: "nova" | "em_analise" | "aprovada" | "arquivada";
   synced_to_sheet: boolean;
   created_at: string;
 };
