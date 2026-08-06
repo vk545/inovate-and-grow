@@ -1,4 +1,4 @@
-const SPREADSHEET_ID = "1STLsiNAK7OLIE4Dh9cn_kobsIZkpFeY4yqPVhJTkdXw";
+const SPREADSHEET_ID = "1JrYGFXR1si4JzEbuZ8vVkwmhOrizw2DAa4gkCRJJJX8";
 const GATEWAY_URL = "https://connector-gateway.lovable.dev/google_sheets/v4";
 
 export type SubmissionRow = {
