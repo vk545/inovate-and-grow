@@ -148,6 +148,27 @@ function Kiosk() {
               <ArrowLeft className="size-4" /> Voltar
             </button>
 
+            <div className="mb-4 grid grid-cols-2 gap-2 rounded-2xl border border-border bg-muted/40 p-1.5">
+              {(Object.keys(CONFIG) as Kind[]).map((key) => (
+                <button
+                  key={key}
+                  type="button"
+                  onClick={() => setKind(key)}
+                  aria-pressed={kind === key}
+                  className={`rounded-xl px-3 py-2.5 text-xs font-bold uppercase leading-tight transition-colors sm:text-sm ${
+                    kind === key
+                      ? key === "sugestao"
+                        ? "bg-primary text-primary-foreground"
+                        : "bg-accent text-accent-foreground"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                >
+                  {CONFIG[key].titulo}
+                </button>
+              ))}
+            </div>
+
+
             <div className="rounded-3xl border border-border bg-card p-6 shadow-[var(--shadow-soft)] sm:p-8">
               <h2 className="text-xl font-extrabold uppercase text-foreground">
                 {CONFIG[kind].titulo}
