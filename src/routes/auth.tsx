@@ -133,6 +133,16 @@ function AuthPage() {
           {mode === "login" ? "Primeiro acesso? Criar conta do RH" : "Já tenho conta, quero entrar"}
         </button>
 
+        <button
+          type="button"
+          className="mt-2 w-full text-sm text-muted-foreground underline-offset-4 hover:underline"
+          onClick={handleReset}
+          disabled={loading}
+        >
+          Esqueci minha senha
+        </button>
+
+
         <Link
           to="/"
           className="mt-6 flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground"
