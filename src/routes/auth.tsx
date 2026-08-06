@@ -43,14 +43,18 @@ function AuthPage() {
     setLoading(true);
     try {
       if (mode === "signup") {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: { emailRedirectTo: `${window.location.origin}/rh` },
         });
         if (error) throw error;
-        toast.success("Conta criada. Confirme o e-mail para acessar o painel.");
-        setMode("login");
+        if (data.session) {
+          navigate({ to: "/rh", replace: true });
+        } else {
+          toast.info("Esse e-mail já possui acesso. Entre com sua senha ou use 'Esqueci minha senha'.");
+          setMode("login");
+        }
       } else {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
@@ -62,6 +66,21 @@ function AuthPage() {
       setLoading(false);
     }
   }
+
+  async function handleReset() {
+    if (!email) {
+      toast.error("Digite seu e-mail primeiro.");
+      return;
+    }
+    setLoading(true);
+    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+      redirectTo: `${window.location.origin}/reset-password`,
+    });
+    setLoading(false);
+    if (error) toast.error(error.message);
+    else toast.success("Enviamos um link para você criar uma nova senha.");
+  }
+
 
   return (
     <main className="flex min-h-screen items-center justify-center bg-[image:var(--gradient-brand)] px-4 py-12">
