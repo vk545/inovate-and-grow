@@ -12,7 +12,7 @@ export type SubmissionRow = {
 };
 
 export function kindLabel(kind: SubmissionRow["kind"]) {
-  return kind === "sugestao" ? "Caixinha de Sugestão" : "Programa Banco de Ideias";
+  return kind === "sugestao" ? "Caixinha Convencional" : "Programa Banco de Ideias";
 }
 
 /** Appends one submission to the company Google Sheet. Never throws. */

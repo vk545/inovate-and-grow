@@ -16,7 +16,7 @@ import { toast } from "sonner";
 import { Inbox, Lightbulb, LogOut, RefreshCw, ExternalLink } from "lucide-react";
 
 const SHEET_URL =
-  "https://docs.google.com/spreadsheets/d/1STLsiNAK7OLIE4Dh9cn_kobsIZkpFeY4yqPVhJTkdXw/edit";
+  "https://docs.google.com/spreadsheets/d/1JrYGFXR1si4JzEbuZ8vVkwmhOrizw2DAa4gkCRJJJX8/edit";
 
 const STATUS: Record<string, string> = {
   nova: "Nova",
@@ -156,7 +156,7 @@ function RhPanel() {
         <Tabs value={filter} onValueChange={(value) => setFilter(value as typeof filter)}>
           <TabsList>
             <TabsTrigger value="todos">Todos</TabsTrigger>
-            <TabsTrigger value="sugestao">Caixinha de Sugestão</TabsTrigger>
+            <TabsTrigger value="sugestao">Caixinha Convencional</TabsTrigger>
             <TabsTrigger value="ideia">Banco de Ideias</TabsTrigger>
           </TabsList>
         </Tabs>

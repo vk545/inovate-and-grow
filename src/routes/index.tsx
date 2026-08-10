@@ -33,7 +33,7 @@ type Step = "escolha" | "formulario" | "sucesso";
 
 const CONFIG = {
   sugestao: {
-    titulo: "Caixinha de Sugestão",
+    titulo: "Caixinha Convencional",
     subtitulo: "Envie feedbacks",
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
     icone: Inbox,
