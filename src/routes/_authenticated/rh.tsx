@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import { InstallAppButton } from "@/components/InstallAppButton";
 import { Inbox, Lightbulb, LogOut, RefreshCw, ExternalLink } from "lucide-react";
 
 const SHEET_URL =
@@ -145,6 +146,7 @@ function RhPanel() {
             <Button variant="onBrand" size="sm" onClick={() => refetch()} disabled={isFetching}>
               <RefreshCw className={`size-4 ${isFetching ? "animate-spin" : ""}`} /> Atualizar
             </Button>
+            <InstallAppButton />
             <Button variant="onBrand" size="sm" onClick={signOut}>
               <LogOut className="size-4" /> Sair
             </Button>
