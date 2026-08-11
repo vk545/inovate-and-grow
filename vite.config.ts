@@ -14,6 +14,11 @@ export default defineConfig({
     server: { entry: "server" },
   },
   vite: {
+    // Compatibilidade com navegadores/WebView antigos (tablets, Fully Kiosk Browser)
+    build: {
+      target: ["es2017", "chrome80", "safari13"],
+      cssTarget: ["chrome80", "safari13"],
+    },
     plugins: [
       VitePWA({
         strategies: "generateSW",
