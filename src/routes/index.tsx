@@ -130,7 +130,6 @@ function Kiosk() {
                         src={item.logo}
                         alt={item.alt}
                         className="size-full object-contain"
-                        loading="lazy"
                       />
                     </span>
 
