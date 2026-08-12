@@ -278,7 +278,7 @@ function Kiosk() {
               Sua contribuição foi enviada para o RH e registrada com segurança. Juntos fazemos a
               empresa crescer.
             </p>
-            <Button variant="brand" size="xl" onClick={reset}>
+            <Button variant="dark" size="xl" onClick={reset}>
               Enviar outra contribuição
             </Button>
           </section>
