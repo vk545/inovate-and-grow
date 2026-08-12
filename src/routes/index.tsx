@@ -7,7 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Inbox, Lightbulb, ArrowLeft, CheckCircle2, Lock } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Lock } from "lucide-react";
+import logoDataConnect from "@/assets/logo-dataconnect.png.asset.json";
+import logoInovaData from "@/assets/logo-inovadata.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
