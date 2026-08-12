@@ -41,7 +41,6 @@ const CONFIG = {
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
     logo: logoDataConnect.url,
     alt: "Logo DataConnect",
-    classe: "bg-primary text-primary-foreground",
   },
   ideia: {
     titulo: "Programa Banco de Ideias",
@@ -49,7 +48,6 @@ const CONFIG = {
     descricao: "Ideias e projetos precisam de identificação para que o RH possa dar retorno.",
     logo: logoInovaData.url,
     alt: "Logo InovaData",
-    classe: "bg-accent text-accent-foreground",
   },
 } as const;
 
@@ -123,20 +121,22 @@ function Kiosk() {
                     key={key}
                     type="button"
                     onClick={() => open(key)}
-                    className={`group flex flex-col items-center gap-4 rounded-[2rem] px-6 py-10 text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1 ${item.classe}`}
+                    className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1"
                   >
-                    <span className="flex size-28 items-center justify-center overflow-hidden rounded-3xl bg-[#111134]">
+                    <span className="flex aspect-square items-center justify-center overflow-hidden bg-[#111134]">
                       <img
                         src={item.logo}
                         alt={item.alt}
-                        className="size-full object-contain"
+                        className="size-full object-contain p-6"
                       />
                     </span>
 
-                    <span className="text-lg font-extrabold uppercase leading-tight">
-                      {item.titulo}
+                    <span className="flex flex-col gap-1 px-6 py-6">
+                      <span className="text-lg font-extrabold uppercase leading-tight text-foreground">
+                        {item.titulo}
+                      </span>
+                      <span className="text-sm text-muted-foreground">{item.subtitulo}</span>
                     </span>
-                    <span className="text-sm opacity-90">{item.subtitulo}</span>
                   </button>
                 );
               })}
@@ -167,9 +167,7 @@ function Kiosk() {
                   aria-pressed={kind === key}
                   className={`rounded-xl px-3 py-2.5 text-xs font-bold uppercase leading-tight transition-colors sm:text-sm ${
                     kind === key
-                      ? key === "sugestao"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-accent text-accent-foreground"
+                      ? "bg-[#111134] text-white"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
@@ -258,7 +256,7 @@ function Kiosk() {
 
                 <Button
                   type="submit"
-                  variant={kind === "sugestao" ? "brand" : "brandAccent"}
+                  variant="dark"
                   size="xl"
                   className="w-full"
                   disabled={loading}
@@ -280,7 +278,7 @@ function Kiosk() {
               Sua contribuição foi enviada para o RH e registrada com segurança. Juntos fazemos a
               empresa crescer.
             </p>
-            <Button variant="brand" size="xl" onClick={reset}>
+            <Button variant="dark" size="xl" onClick={reset}>
               Enviar outra contribuição
             </Button>
           </section>

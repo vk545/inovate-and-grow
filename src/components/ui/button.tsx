@@ -22,6 +22,8 @@ const buttonVariants = cva(
           "bg-accent text-accent-foreground shadow-[var(--shadow-soft)] hover:brightness-110",
         onBrand:
           "bg-white/15 text-primary-foreground backdrop-blur hover:bg-white/25 border border-white/25",
+        dark:
+          "bg-[#111134] text-white shadow-[var(--shadow-soft)] hover:brightness-110",
       },
       size: {
         default: "h-9 px-4 py-2",
