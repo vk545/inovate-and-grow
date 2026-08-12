@@ -118,7 +118,6 @@ function Kiosk() {
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {(Object.keys(CONFIG) as Kind[]).map((key) => {
                 const item = CONFIG[key];
-                const Icon = item.icone;
                 return (
                   <button
                     key={key}
@@ -126,9 +125,15 @@ function Kiosk() {
                     onClick={() => open(key)}
                     className={`group flex flex-col items-center gap-4 rounded-[2rem] px-6 py-10 text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1 ${item.classe}`}
                   >
-                    <span className="flex size-24 items-center justify-center rounded-3xl bg-white/15">
-                      <Icon className="size-12" strokeWidth={1.6} />
+                    <span className="flex size-28 items-center justify-center overflow-hidden rounded-3xl bg-[#111134]">
+                      <img
+                        src={item.logo}
+                        alt={item.alt}
+                        className="size-full object-contain"
+                        loading="lazy"
+                      />
                     </span>
+
                     <span className="text-lg font-extrabold uppercase leading-tight">
                       {item.titulo}
                     </span>
