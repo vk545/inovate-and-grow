@@ -167,9 +167,7 @@ function Kiosk() {
                   aria-pressed={kind === key}
                   className={`rounded-xl px-3 py-2.5 text-xs font-bold uppercase leading-tight transition-colors sm:text-sm ${
                     kind === key
-                      ? key === "sugestao"
-                        ? "bg-primary text-primary-foreground"
-                        : "bg-accent text-accent-foreground"
+                      ? "bg-[#111134] text-white"
                       : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
