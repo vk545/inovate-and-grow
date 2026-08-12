@@ -41,7 +41,6 @@ const CONFIG = {
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
     logo: logoDataConnect.url,
     alt: "Logo DataConnect",
-    classe: "bg-primary text-primary-foreground",
   },
   ideia: {
     titulo: "Programa Banco de Ideias",
@@ -49,7 +48,6 @@ const CONFIG = {
     descricao: "Ideias e projetos precisam de identificação para que o RH possa dar retorno.",
     logo: logoInovaData.url,
     alt: "Logo InovaData",
-    classe: "bg-accent text-accent-foreground",
   },
 } as const;
 
