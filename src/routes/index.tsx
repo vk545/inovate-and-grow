@@ -36,17 +36,20 @@ const CONFIG = {
     titulo: "Caixinha Convencional",
     subtitulo: "Envie feedbacks",
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
-    icone: Inbox,
+    logo: logoDataConnect.url,
+    alt: "Logo DataConnect",
     classe: "bg-primary text-primary-foreground",
   },
   ideia: {
     titulo: "Programa Banco de Ideias",
     subtitulo: "Compartilhe suas inovações e grandes projetos",
     descricao: "Ideias e projetos precisam de identificação para que o RH possa dar retorno.",
-    icone: Lightbulb,
+    logo: logoInovaData.url,
+    alt: "Logo InovaData",
     classe: "bg-accent text-accent-foreground",
   },
 } as const;
+
 
 function Kiosk() {
   const [step, setStep] = useState<Step>("escolha");
