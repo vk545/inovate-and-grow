@@ -121,20 +121,22 @@ function Kiosk() {
                     key={key}
                     type="button"
                     onClick={() => open(key)}
-                    className={`group flex flex-col items-center gap-4 rounded-[2rem] px-6 py-10 text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1 ${item.classe}`}
+                    className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1"
                   >
-                    <span className="flex size-28 items-center justify-center overflow-hidden rounded-3xl bg-[#111134]">
+                    <span className="flex aspect-square items-center justify-center overflow-hidden bg-[#111134]">
                       <img
                         src={item.logo}
                         alt={item.alt}
-                        className="size-full object-contain"
+                        className="size-full object-contain p-6"
                       />
                     </span>
 
-                    <span className="text-lg font-extrabold uppercase leading-tight">
-                      {item.titulo}
+                    <span className="flex flex-col gap-1 px-6 py-6">
+                      <span className="text-lg font-extrabold uppercase leading-tight text-foreground">
+                        {item.titulo}
+                      </span>
+                      <span className="text-sm text-muted-foreground">{item.subtitulo}</span>
                     </span>
-                    <span className="text-sm opacity-90">{item.subtitulo}</span>
                   </button>
                 );
               })}
