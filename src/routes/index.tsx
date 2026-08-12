@@ -256,7 +256,7 @@ function Kiosk() {
 
                 <Button
                   type="submit"
-                  variant={kind === "sugestao" ? "brand" : "brandAccent"}
+                  variant="dark"
                   size="xl"
                   className="w-full"
                   disabled={loading}
