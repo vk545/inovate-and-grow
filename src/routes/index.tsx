@@ -7,7 +7,10 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
-import { Inbox, Lightbulb, ArrowLeft, CheckCircle2, Lock } from "lucide-react";
+import { ArrowLeft, CheckCircle2, Lock } from "lucide-react";
+import logoDataConnect from "@/assets/logo-dataconnect.png.asset.json";
+import logoInovaData from "@/assets/logo-inovadata.png.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -36,17 +39,20 @@ const CONFIG = {
     titulo: "Caixinha Convencional",
     subtitulo: "Envie feedbacks",
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
-    icone: Inbox,
+    logo: logoDataConnect.url,
+    alt: "Logo DataConnect",
     classe: "bg-primary text-primary-foreground",
   },
   ideia: {
     titulo: "Programa Banco de Ideias",
     subtitulo: "Compartilhe suas inovações e grandes projetos",
     descricao: "Ideias e projetos precisam de identificação para que o RH possa dar retorno.",
-    icone: Lightbulb,
+    logo: logoInovaData.url,
+    alt: "Logo InovaData",
     classe: "bg-accent text-accent-foreground",
   },
 } as const;
+
 
 function Kiosk() {
   const [step, setStep] = useState<Step>("escolha");
@@ -112,7 +118,6 @@ function Kiosk() {
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {(Object.keys(CONFIG) as Kind[]).map((key) => {
                 const item = CONFIG[key];
-                const Icon = item.icone;
                 return (
                   <button
                     key={key}
@@ -120,9 +125,14 @@ function Kiosk() {
                     onClick={() => open(key)}
                     className={`group flex flex-col items-center gap-4 rounded-[2rem] px-6 py-10 text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1 ${item.classe}`}
                   >
-                    <span className="flex size-24 items-center justify-center rounded-3xl bg-white/15">
-                      <Icon className="size-12" strokeWidth={1.6} />
+                    <span className="flex size-28 items-center justify-center overflow-hidden rounded-3xl bg-[#111134]">
+                      <img
+                        src={item.logo}
+                        alt={item.alt}
+                        className="size-full object-contain"
+                      />
                     </span>
+
                     <span className="text-lg font-extrabold uppercase leading-tight">
                       {item.titulo}
                     </span>
