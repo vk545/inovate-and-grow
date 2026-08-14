@@ -113,7 +113,7 @@ function Kiosk() {
               Como você quer contribuir hoje?
             </h2>
 
-            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-6">
               {(Object.keys(CONFIG) as Kind[]).map((key) => {
                 const item = CONFIG[key];
                 return (
@@ -123,19 +123,21 @@ function Kiosk() {
                     onClick={() => open(key)}
                     className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1"
                   >
-                    <span className="flex aspect-square items-center justify-center overflow-hidden bg-[#111134]">
+                    <span className="flex h-32 items-center justify-center overflow-hidden bg-[#111134] sm:h-40">
                       <img
                         src={item.logo}
                         alt={item.alt}
-                        className="size-full object-contain p-6"
+                        className="h-full w-auto object-contain p-3 sm:p-4"
                       />
                     </span>
 
-                    <span className="flex flex-col gap-1 px-6 py-6">
-                      <span className="text-lg font-extrabold uppercase leading-tight text-foreground">
+                    <span className="flex flex-col gap-1 px-4 py-4 sm:px-6 sm:py-5">
+                      <span className="text-sm font-extrabold uppercase leading-tight text-foreground sm:text-lg">
                         {item.titulo}
                       </span>
-                      <span className="text-sm text-muted-foreground">{item.subtitulo}</span>
+                      <span className="text-xs text-muted-foreground sm:text-sm">
+                        {item.subtitulo}
+                      </span>
                     </span>
                   </button>
                 );
