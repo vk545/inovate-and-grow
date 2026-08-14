@@ -127,7 +127,7 @@ function Kiosk() {
                       <img
                         src={item.logo}
                         alt={item.alt}
-                        className="h-full w-auto object-contain p-3 sm:p-4"
+                        className="h-full w-full max-h-full object-contain p-1 sm:p-1.5"
                       />
                     </span>
 
