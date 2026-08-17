@@ -8,8 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { ArrowLeft, CheckCircle2, Lock } from "lucide-react";
-import logoDataConnect from "@/assets/logo-dataconnect.png.asset.json";
-import logoInovaData from "@/assets/logo-inovadata.png.asset.json";
+import logoDataConnect from "/logos/logo-dataconnect.png";
+import logoInovaData from "/logos/logo-inovadata.png";
 
 
 export const Route = createFileRoute("/")({
