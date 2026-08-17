@@ -39,14 +39,14 @@ const CONFIG = {
     titulo: "Caixinha Convencional",
     subtitulo: "Envie feedbacks",
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
-    logo: logoDataConnect.url,
+    logo: logoDataConnect,
     alt: "Logo DataConnect",
   },
   ideia: {
     titulo: "Programa Banco de Ideias",
     subtitulo: "Compartilhe suas inovações e grandes projetos",
     descricao: "Ideias e projetos precisam de identificação para que o RH possa dar retorno.",
-    logo: logoInovaData.url,
+    logo: logoInovaData,
     alt: "Logo InovaData",
   },
 } as const;
