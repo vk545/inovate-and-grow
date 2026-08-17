@@ -8,8 +8,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { ArrowLeft, CheckCircle2, Lock } from "lucide-react";
-import logoDataConnect from "@/assets/logo-dataconnect.png.asset.json";
-import logoInovaData from "@/assets/logo-inovadata.png.asset.json";
+import logoDataConnect from "/logos/logo-dataconnect.png";
+import logoInovaData from "/logos/logo-inovadata.png";
 
 
 export const Route = createFileRoute("/")({
@@ -39,14 +39,14 @@ const CONFIG = {
     titulo: "Caixinha Convencional",
     subtitulo: "Envie feedbacks",
     descricao: "Conte o que podemos melhorar no dia a dia. Se preferir, envie de forma anônima.",
-    logo: logoDataConnect.url,
+    logo: logoDataConnect,
     alt: "Logo DataConnect",
   },
   ideia: {
     titulo: "Programa Banco de Ideias",
     subtitulo: "Compartilhe suas inovações e grandes projetos",
     descricao: "Ideias e projetos precisam de identificação para que o RH possa dar retorno.",
-    logo: logoInovaData.url,
+    logo: logoInovaData,
     alt: "Logo InovaData",
   },
 } as const;
@@ -123,11 +123,11 @@ function Kiosk() {
                     onClick={() => open(key)}
                     className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1"
                   >
-                    <span className="flex h-32 items-center justify-center overflow-hidden bg-[#111134] sm:h-40">
+                    <span className="flex h-44 items-center justify-center overflow-hidden bg-[#111134] sm:h-56">
                       <img
                         src={item.logo}
                         alt={item.alt}
-                        className="h-full w-full max-h-full object-contain p-1 sm:p-1.5"
+                        className="h-full w-full max-h-full object-contain p-1"
                       />
                     </span>
 
