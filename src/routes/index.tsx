@@ -123,11 +123,11 @@ function Kiosk() {
                     onClick={() => open(key)}
                     className="group flex flex-col overflow-hidden rounded-[2rem] border border-border bg-card text-center shadow-[var(--shadow-panel)] transition-transform duration-200 active:scale-[0.98] sm:hover:-translate-y-1"
                   >
-                    <span className="flex h-32 items-center justify-center overflow-hidden bg-[#111134] sm:h-40">
+                    <span className="flex h-44 items-center justify-center overflow-hidden bg-[#111134] sm:h-56">
                       <img
                         src={item.logo}
                         alt={item.alt}
-                        className="h-full w-full max-h-full object-contain p-1 sm:p-1.5"
+                        className="h-full w-full max-h-full object-contain p-1"
                       />
                     </span>
 
